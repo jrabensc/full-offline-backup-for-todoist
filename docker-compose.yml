@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  todoist-backup:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    environment:
+      CRON_SCHEDULE: ${CRON_SCHEDULE}
+      TODOIST_TOKEN: ${TODOIST_TOKEN}
+    volumes:
+      - ./:/app/
+
